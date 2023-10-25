@@ -51,6 +51,7 @@ export default {
   },
   methods: {
     submitForm() {
+      console.log('hit');
       this.formIsValid = true;
 
       if (
@@ -60,6 +61,15 @@ export default {
       ) {
         this.formIsValid = false;
         return;
+      }
+
+      if (this.mode === 'login') {
+        // ....
+      } else {
+        this.$store.dispatch('signUp', {
+          email: this.email,
+          password: this.password,
+        });
       }
     },
     switchAuthMode() {
