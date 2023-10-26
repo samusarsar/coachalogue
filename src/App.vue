@@ -14,6 +14,21 @@ export default {
   components: {
     TheHeader,
   },
+  computed: {
+    didAutoLogOut() {
+      return this.$store.getters.didAutoLogOut;
+    },
+  },
+  watch: {
+    didAutoLogOut(currValue, oldValue) {
+      if (currValue && currValue !== oldValue) {
+        this.$router.replace('/coaches');
+      }
+    },
+  },
+  created() {
+    this.$store.dispatch('tryLogIn');
+  },
 };
 </script>
 
