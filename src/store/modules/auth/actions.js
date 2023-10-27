@@ -89,6 +89,7 @@ export default {
       token: null,
       userId: null,
     });
+    context.commit('setAutoLogOut');
   },
   autoLogOut(context) {
     context.dispatch('logOut');
