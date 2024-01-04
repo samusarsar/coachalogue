@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "serve-env": "vue-cli-service serve --mode development --env NODE_ENV --dotenv .env.local",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "v": "node -v"
@@ -21,6 +22,7 @@
     "@vue/cli-service": "^4.5.4",
     "@vue/compiler-sfc": "^3.0.0-rc.7",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-beta.2"
   }

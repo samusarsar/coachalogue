@@ -61,7 +61,6 @@ export default {
   },
   methods: {
     async submitForm() {
-      console.log('hit');
       this.formIsValid = true;
 
       if (
