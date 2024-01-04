@@ -15,12 +15,10 @@ export default {
   },
   async auth(context, payload) {
     const mode = payload.mode;
-    let url =
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDjA_gAnz93zDbRrm3JvqwLkD3cG47fUNU';
+    let url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${process.env.FIREBASE_API_KEY}`;
 
     if (mode === 'signup') {
-      url =
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDjA_gAnz93zDbRrm3JvqwLkD3cG47fUNU';
+      url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.FIREBASE_API_KEY}`;
     }
 
     const response = await fetch(url, {
